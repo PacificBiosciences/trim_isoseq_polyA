@@ -46,9 +46,12 @@
 #include <fstream>
 #include <boost/iterator/iterator_facade.hpp>
 #include <boost/iostreams/filtering_stream.hpp>
+#include "type_policy.h"
+
+#ifdef TO_SUPPORT_COMPRESSED_INPUT
 #include <boost/iostreams/filter/gzip.hpp>
 #include <boost/iostreams/filter/bzip2.hpp>
-#include "type_policy.h"
+#endif
 
 template<class T>
 class FormatReader;
@@ -112,15 +115,19 @@ public:
                 exit(EXIT_FAILURE);
             }
             p_ist_in = new std::ifstream{file_name};
-            char magic_number[4] = "\0\0\0";
+#ifdef TO_SUPPORT_COMPRESSED_INPUT
+#define GZIP_MAGIC "\037\213"
+#define BZIP2_MAGIC "BZ"
+            char magic_number[3];
             p_ist_in->get(magic_number, 3);
-            if (magic_number[0] == '\037' && magic_number[1] == (char) '\213') {
+            if (memcmp(magic_number, GZIP_MAGIC, 2) == 0) {
                 ins_.push(boost::iostreams::gzip_decompressor());
             }
-            else if (magic_number[0] == 'B' && magic_number[1] == 'Z') {
+            else if (memcmp(magic_number, BZIP2_MAGIC, 2) == 0) {
                 ins_.push(boost::iostreams::bzip2_decompressor());
             }
             p_ist_in->seekg(0, p_ist_in->beg);
+#endif
         }
         else {
             std::ios::sync_with_stdio(false);

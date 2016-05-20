@@ -7,23 +7,34 @@ with the HMM model been trained with that data. However, with an `-G` option, it
 ## Prerequisite
 - C++11
 - Boost
-- Zlib
-- BZib2
 - pthread
+- ~~Zlib~~ 
+- ~~BZib2~~ <br>
+Zlib and BZlib2 are needed if you need to support gzip/bzip2 compressed input files.
+
 
 ## Install
+
 ```bash
 mkdir build && \
 cd build && \
 cmake ../ -DBOOST_ROOT=PATH_TO_YOUR_BOOST_ROOT_DIR -DCMAKE_BUILD_TYPE=Release && \
 make
 ```
-
     Executable `trim_isoseq_polyA` will be saved in directory trim_isoseq_polyA/bin.
     Please replace PATH_TO_YOUR_BOOST_ROOT_DIR with your own boost root directory.
     e.g., -DBOOST_ROOT=~/mylib/boost/boost_1_60_0/
 
-## Build with unit tests
+#### With native support for gzip/bzip2 compressed input
+```bash
+mkdir build && \
+cd build && \
+cmake ../ -DBOOST_ROOT=PATH_TO_YOUR_BOOST_ROOT_DIR -DCMAKE_BUILD_TYPE=Release \
+    -DSUPPORT_COMPRESSED_INPUT=ON && \
+make
+```
+
+#### Build with unit tests
 ```bash
 mkdir buildwtest && \
 cd buildwtest && \
