@@ -8,7 +8,7 @@ cmake_minimum_required(VERSION 2.8)
 # project version
 set(TrimIsoseqPolyA_MAJOR_VERSION 0)
 set(TrimIsoseqPolyA_MINOR_VERSION 0)
-set(TrimIsoseqPolyA_PATCH_VERSION 1)
+set(TrimIsoseqPolyA_PATCH_VERSION 2)
 set(TrimIsoseqPolyA_VERSION
         "${TrimIsoseqPolyA_MAJOR_VERSION}.${TrimIsoseqPolyA_MINOR_VERSION}.${TrimIsoseqPolyA_PATCH_VERSION}"
         )

@@ -33,6 +33,9 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} ${TrimIsoseqPolyA_CXX_FLAGS}")
 set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${TrimIsoseqPolyA_EXE_LINKER_FLAGS}")
 
 add_library(trima ${LIB_SOURCE_FILES})
+
+target_include_directories(trima PUBLIC ${TrimIsoseqPolyA_SourceDir})
+
 set_target_properties(trima PROPERTIES
         ARCHIVE_OUTPUT_DIRECTORY ${TrimIsoseqPolyA_LibDir}
         RUNTIME_OUTPUT_DIRECTORY ${TrimIsoseqPolyA_LibDir}
