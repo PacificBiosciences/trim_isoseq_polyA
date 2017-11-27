@@ -8,13 +8,14 @@ cmake_minimum_required(VERSION 2.8)
 # project version
 set(TrimIsoseqPolyA_MAJOR_VERSION 0)
 set(TrimIsoseqPolyA_MINOR_VERSION 0)
-set(TrimIsoseqPolyA_PATCH_VERSION 2)
+set(TrimIsoseqPolyA_PATCH_VERSION 3)
 set(TrimIsoseqPolyA_VERSION
         "${TrimIsoseqPolyA_MAJOR_VERSION}.${TrimIsoseqPolyA_MINOR_VERSION}.${TrimIsoseqPolyA_PATCH_VERSION}"
         )
 
 # build time options
 option(TrimIsoseqPolyA_build_tests "Build trim isoseq polyA unit tests." OFF)
+option(TrimIsoseqPolyA_build_bin   "Build binaries." ON)
 
 # main project paths
 set(TrimIsoseqPolyA_RootDir ${TrimIsoseqPolyA_SOURCE_DIR})
@@ -98,7 +99,7 @@ if (TrimIsoseqPolyA_build_tests)
     )
     #add_subdirectory(${source_dir})
 
-    #set(GTEST_SourceDir ${source_dir}) 
+    #set(GTEST_SourceDir ${source_dir})
     #message (status " GTEST_SourceDir = " ${source_dir})
 
     # Download and build gmock
