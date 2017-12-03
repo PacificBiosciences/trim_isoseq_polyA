@@ -42,22 +42,24 @@ set_target_properties(trima PROPERTIES
         LIBRARY_OUTPUT_DIRECTORY ${TrimIsoseqPolyA_LibDir}
         )
 
-add_executable(trim_isoseq_polyA ${EXE_SOURCE_FILES})
-set_target_properties(trim_isoseq_polyA PROPERTIES
-        RUNTIME_OUTPUT_DIRECTORY ${TrimIsoseqPolyA_BinDir}
-        )
+if (TrimIsoseqPolyA_build_bin)
+        add_executable(trim_isoseq_polyA ${EXE_SOURCE_FILES})
+        set_target_properties(trim_isoseq_polyA PROPERTIES
+                RUNTIME_OUTPUT_DIRECTORY ${TrimIsoseqPolyA_BinDir}
+                )
 
-if (NOT APPLE)
-    set(MY_LIBRT -lrt)
-else ()
-endif ()
+        if (NOT APPLE)
+        set(MY_LIBRT -lrt)
+        else ()
+        endif ()
 
-message(STATUS "Boost_LIBRARIES: " ${Boost_LIBRARIES})
+        message(STATUS "Boost_LIBRARIES: " ${Boost_LIBRARIES})
 
-target_link_libraries(trim_isoseq_polyA
-        ${Boost_LIBRARIES}
-        ${ZLIB_LIBRARIES}
-        ${BZIP2_LIBRARIES}
-        ${CMAKE_THREAD_LIBS_INIT}
-        #${MY_LIBRT}
-        )
+        target_link_libraries(trim_isoseq_polyA
+                ${Boost_LIBRARIES}
+                ${ZLIB_LIBRARIES}
+                ${BZIP2_LIBRARIES}
+                ${CMAKE_THREAD_LIBS_INIT}
+                #${MY_LIBRT}
+                )
+endif()
