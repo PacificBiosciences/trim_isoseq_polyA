@@ -4,19 +4,14 @@
 #include <string>
 
 namespace tests {
-
-    const std::string Source_Dir   = std::string("@TrimIsoseqPolyA_TestsDir@/src/");
-    const std::string Bin_Dir      = std::string("@TrimIsoseqPolyA_TestsDir@/bin/");
     const std::string Data_Dir     = std::string("@TrimIsoseqPolyA_TestsDir@/data/");
-    const std::string Out_Dir      = std::string("@TrimIsoseqPolyA_TestsDir@/out/");
-
 
     const std::string testReader_Fasta      = Data_Dir + "testReader.fa";
     const std::string polyA_Fasta           = Data_Dir + "polyA.fa";
     const std::string polyA_Fastq           = Data_Dir + "polyA.fq";
     const std::string polyA_train_Fasta     = Data_Dir + "polyA_train.fa";
     const std::string non_polyA_train_Fasta = Data_Dir + "non_polyA_train.fa";
-    const std::string hmm_Default_Out       = Out_Dir + "HMM_default.txt";
+    const std::string hmm_Default_Out       = Data_Dir + "HMM_default.txt";
 } // namespace tests
 
 #endif // TESTDATA_H

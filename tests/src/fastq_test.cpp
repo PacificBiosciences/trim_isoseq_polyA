@@ -36,8 +36,8 @@
 // Author: Bo Han
 #include <string>
 #include <iostream>
-#include "fastq.hpp"
-#include "gmock/gmock.h"
+#include <pacbio/trima/fastq.hpp>
+#include <gmock/gmock.h>
 #include "TestData.h"
 
 using namespace std;
@@ -48,11 +48,11 @@ namespace {
         : reader(tests::polyA_Fastq)//"/Users/hanb/Dropbox/git/pacBio/HMM/HMM/tests/polyA.fq")
         {
         }
-        
+
     public:
         FastqReader<> reader;
     };
-    
+
     TEST_F(FastqTest, FastaReaderIterator)
     {
         auto fq = reader.begin();
@@ -70,7 +70,7 @@ namespace {
         ++fq;
         EXPECT_TRUE(*fq == Fastq<>{});
     }
-    
+
     TEST_F(FastqTest, FastqReaderForLoop)
     {
         size_t sizes[] = { 469, 601, 0 };
@@ -79,7 +79,7 @@ namespace {
             EXPECT_EQ(fq.size(), sizes[i++]);
         }
     }
-    
+
     TEST_F(FastqTest, FastqSequence)
     {
         auto fqiter = reader.begin();

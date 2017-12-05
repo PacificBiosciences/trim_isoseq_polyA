@@ -37,10 +37,10 @@
 #include <vector>
 #include <list>
 #include <string>
-#include "fasta.hpp"
-#include "polyA_hmm_model.hpp"
-#include "hmm_utilities.h"
-#include "gmock/gmock.h"
+#include <pacbio/trima/fasta.hpp>
+#include <pacbio/trima/polyA_hmm_model.hpp>
+#include <pacbio/trima/hmm_utilities.h>
+#include <gmock/gmock.h>
 #include "TestData.h"
 
 using namespace std;
@@ -192,9 +192,9 @@ TEST_F(PolyAHmmModeTest, BackwardAlgorithmCString)
 { // string literal
     const Matrix<double>& bak = hmm.calculateBackward("AAAAAACAGTCGACGAAAAA");
     Matrix<double> answer(2, 20);
-    answer = { -31.4992583, -30.9392593, -30.3964246, -29.8940298, -29.4937411, 
+    answer = { -31.4992583, -30.9392593, -30.3964246, -29.8940298, -29.4937411,
                -29.4056497, -25.5110163, -25.4545512, -23.1488508, -21.3901001,
-               -18.9374239, -14.8182778, -14.6651073, -9.5510579, -2.5597362, 
+               -18.9374239, -14.8182778, -14.6651073, -9.5510579, -2.5597362,
                -1.9924837, -1.4330348, -0.8914715, -0.3921371, 0.0000000,
                -36.512121, -34.775156, -33.038190, -31.301225, -29.564259,
                -27.827293, -25.505365, -23.768400, -21.446472, -19.709506,

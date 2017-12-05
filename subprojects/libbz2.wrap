@@ -1,0 +1,4 @@
+[wrap-git]
+directory=libbz2
+url=https://github.com/centricular/bzip2
+revision=master

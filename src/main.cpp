@@ -40,10 +40,10 @@
 #include <thread>
 #include <mutex>
 #include <boost/program_options.hpp>
-#include "fasta.hpp"
-#include "thread.hpp"
-#include "polyA_hmm_model.hpp"
-#include "kernel_color.h"
+#include <pacbio/trima/fasta.hpp>
+#include <pacbio/trima/thread.hpp>
+#include <pacbio/trima/polyA_hmm_model.hpp>
+#include <pacbio/trima/kernel_color.h>
 
 /* send every 100 fasta entries to a thread each time */
 const int default_bulk_size = 100;

@@ -35,8 +35,8 @@
 
 // Author: Bo Han
 #include <string>
-#include "fasta.hpp"
-#include "gmock/gmock.h"
+#include <pacbio/trima/fasta.hpp>
+#include <gmock/gmock.h>
 #include "TestData.h"
 
 using namespace std;

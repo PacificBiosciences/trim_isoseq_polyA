@@ -34,7 +34,7 @@
 // SUCH DAMAGE.
 
 // Author: Bo Han
-#include "hmm_model.hpp"
+#include <pacbio/trima/hmm_model.hpp>
 
 HmmModeBase::HmmModeBase(int sta, int sym)
     : no_states_(sta), no_symbol_(sym), init_(sta, 1), tran_(sta, sta), emit_(sta, sym)

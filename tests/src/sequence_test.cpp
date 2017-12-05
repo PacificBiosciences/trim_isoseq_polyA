@@ -35,8 +35,8 @@
 
 // Author: Bo Han
 #include <string>
-#include "gmock/gmock.h"
-#include "sequence.hpp"
+#include <gmock/gmock.h>
+#include <pacbio/trima/sequence.hpp>
 
 using namespace std;
 namespace {

@@ -35,7 +35,7 @@
 
 // Author: Bo Han
 
-#include "polyA_hmm_model.hpp"
+#include <pacbio/trima/polyA_hmm_model.hpp>
 //constexpr size_t PolyAHmmMode::nStates = 2;
 //constexpr size_t PolyAHmmMode::nSymbol = 4;
 

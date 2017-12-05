@@ -37,8 +37,8 @@
 
 #include <iostream>
 #include <cmath>
-#include "matrix.hpp"
-#include "gmock/gmock.h"
+#include <pacbio/trima/matrix.hpp>
+#include <gmock/gmock.h>
 
 namespace {
 class MatrixTest : public ::testing::Test {

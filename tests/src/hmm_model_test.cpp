@@ -35,8 +35,8 @@
 
 // Author: Bo Han
 #include <string>
-#include "hmm_model.hpp"
-#include "gmock/gmock.h"
+#include <pacbio/trima/hmm_model.hpp>
+#include <gmock/gmock.h>
 #include "TestData.h"
 
 using namespace std;
