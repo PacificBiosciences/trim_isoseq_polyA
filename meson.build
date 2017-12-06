@@ -92,6 +92,6 @@ endif
 trima_dep = declare_dependency(
   include_directories : trima_include_directories,
   link_with : trima_lib,
-  dependencies : trima_lib_deps,
+  dependencies : dep_clock,
   version : meson.project_version(),
   compile_args : trima_flags)
