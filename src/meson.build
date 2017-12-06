@@ -14,7 +14,6 @@ trima_lib = library(
   install : true,
   soversion : meson.project_version(),
   version : meson.project_version(),
-  dependencies : trima_lib_deps,
   include_directories : trima_include_directories,
   cpp_args : trima_flags)
 
