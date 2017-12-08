@@ -31,11 +31,7 @@ endforeach
 # threads
 trima_thread_dep = dependency('threads', required : true)
 
-# boost
-trima_boost_dep = dependency('boost', modules : ['system', 'iostreams'], required : true)
-boost_po_dep = cpp.find_library('boost_program_options')
-
-trima_lib_deps = [trima_thread_dep, trima_boost_dep, boost_po_dep]
+trima_lib_deps = [trima_thread_dep]
 
 # compression
 trima_zlib_dep = dependency('zlib', required : false, fallback : ['zlib', 'zlib_dep'])
